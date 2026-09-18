@@ -13,6 +13,15 @@ export interface ActivityStatusChangedEvent {
   newStatus: string;
 }
 
+export interface ActivityUpdatedEvent {
+  activityId: string;
+  storeId: string;
+  assignedStaffId: string;
+  previousStatus: string;
+  newStatus: string;
+  notes?: string;
+}
+
 export interface ProgrammeCreatedEvent {
   programmeId: string;
   storeId: string;
@@ -30,6 +39,7 @@ export interface ProgrammeStatusChangedEvent {
 export interface DomainEventMap {
   'activity.created': ActivityCreatedEvent;
   'activity.statusChanged': ActivityStatusChangedEvent;
+  'activity.updated': ActivityUpdatedEvent;
   'programme.created': ProgrammeCreatedEvent;
   'programme.statusChanged': ProgrammeStatusChangedEvent;
 }

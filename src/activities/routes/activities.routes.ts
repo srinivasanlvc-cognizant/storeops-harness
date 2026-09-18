@@ -35,6 +35,13 @@ activitiesRouter.get(
 );
 
 activitiesRouter.patch(
+  '/bulk-status',
+  asyncHandler(async (req, res) => {
+    res.status(200).json(activitiesService.bulkUpdateActivityStatus(req.body));
+  }),
+);
+
+activitiesRouter.patch(
   '/:id/status',
   asyncHandler(async (req, res) => {
     res.json(activitiesService.updateActivityStatus(req.params.id, req.body));

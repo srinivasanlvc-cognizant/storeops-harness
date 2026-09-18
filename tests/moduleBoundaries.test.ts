@@ -14,6 +14,7 @@ describe('module boundaries', () => {
     const exposed = activitiesPublicApi as Record<string, unknown>;
     expect(exposed.createActivity).toBeUndefined();
     expect(exposed.updateActivityStatus).toBeUndefined();
+    expect(exposed.bulkUpdateActivityStatus).toBeUndefined();
   });
 
   it('does not expose programmes write operations outside the module', () => {

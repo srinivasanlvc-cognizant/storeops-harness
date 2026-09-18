@@ -4,6 +4,7 @@ export type {
   DomainEventName,
   ActivityCreatedEvent,
   ActivityStatusChangedEvent,
+  ActivityUpdatedEvent,
   ProgrammeCreatedEvent,
   ProgrammeStatusChangedEvent,
 } from './types';

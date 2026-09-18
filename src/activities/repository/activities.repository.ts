@@ -29,10 +29,15 @@ export class ActivitiesRepository {
     return Array.from(this.records.values());
   }
 
-  updateStatus(id: string, status: ActivityStatus): Activity | undefined {
+  updateStatus(id: string, status: ActivityStatus, notes?: string): Activity | undefined {
     const existing = this.records.get(id);
     if (!existing) return undefined;
-    const updated: Activity = { ...existing, status, updatedAt: new Date().toISOString() };
+    const updated: Activity = {
+      ...existing,
+      status,
+      updatedAt: new Date().toISOString(),
+      ...(notes !== undefined ? { notes } : {}),
+    };
     this.records.set(id, updated);
     return updated;
   }

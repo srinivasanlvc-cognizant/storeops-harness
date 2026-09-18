@@ -12,7 +12,15 @@ function buildSummary(storeId?: string): ReportSummary {
   const programmes = listProgrammes(storeId ? { storeId } : {});
   const alerts = listAlerts(storeId ? { storeId } : {});
 
-  const activityCounts = { pending: 0, in_progress: 0, completed: 0, cancelled: 0, total: activities.length };
+  const activityCounts = {
+    pending: 0,
+    in_progress: 0,
+    completed: 0,
+    cancelled: 0,
+    DONE: 0,
+    BLOCKED: 0,
+    total: activities.length,
+  };
   for (const activity of activities) activityCounts[activity.status] += 1;
 
   const programmeCounts = { draft: 0, active: 0, completed: 0, cancelled: 0, total: programmes.length };
