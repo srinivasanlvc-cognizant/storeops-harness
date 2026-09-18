@@ -1,3 +1,10 @@
+# StoreOps Agentic Harness Capstone Project
+
+**Public GitHub Repository**: https://github.com/srinivasanlvc-cognizant/storeops-harness
+
+## Project Overview
+This repository contains the complete StoreOps REST API governed by an autonomous 4-agent development harness (Planner, Generator, Evaluator, Monitor).
+
 # StoreOps API
 
 REST API for retail store operations management, built with Node.js + TypeScript (strict mode).
